@@ -23,7 +23,7 @@ function App() {
         <header className="header">
           <div className="container">
             <Link to="/" className="logo" onClick={closeMenu}>
-              <img src="/src/images/logo.png" alt="Liburnia Impex" />
+              <img src="/logo.png" alt="Liburnia Impex" />
               <span>LIBURNIA <strong>IMPEX</strong></span>
             </Link>
             
