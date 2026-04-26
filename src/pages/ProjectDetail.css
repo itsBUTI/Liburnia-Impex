@@ -1,0 +1,452 @@
+.project-detail {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.not-found {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 1.5rem;
+}
+
+.not-found h1 {
+  font-size: 2rem;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+}
+
+/* Hero */
+.pd-hero {
+  position: relative;
+  min-height: 55vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%) !important;
+}
+
+.pd-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(17, 17, 17, 0.95), transparent 60%);
+}
+
+.pd-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  padding-top: 18vh;
+}
+
+.pd-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+}
+
+.pd-back:hover {
+  color: var(--accent);
+}
+
+.pd-status {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--white);
+  padding: 0.4rem 0.875rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 4px;
+  margin-bottom: 0.75rem;
+}
+
+.pd-status.done {
+  background: #27ae60;
+}
+
+.pd-status.coming {
+  background: #8e44ad;
+}
+
+.pd-hero h1 {
+  font-size: 3rem;
+  color: var(--white);
+  margin-bottom: 0.35rem;
+}
+
+.pd-location {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin-bottom: 0.35rem;
+}
+
+.pd-price {
+  font-size: 1.75rem;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.pd-gallery {
+  position: absolute;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  display: flex;
+  gap: 0.75rem;
+  z-index: 2;
+}
+
+.pd-gallery-item {
+  width: 70px;
+  height: 70px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.pd-gallery-item:hover {
+  background: var(--accent);
+}
+
+/* Info Section */
+.pd-info {
+  padding: 3.5rem 1.5rem;
+  background: var(--white);
+}
+
+.pd-grid {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: 2.5rem;
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+.pd-main {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.pd-description h2,
+.pd-features h2,
+.pd-apartments h2 {
+  font-size: 1.65rem;
+  color: var(--primary);
+  margin-bottom: 1.25rem;
+}
+
+.pd-desc-full {
+  font-size: 1.05rem;
+  color: var(--text-light);
+  line-height: 1.8;
+}
+
+.pd-features-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.875rem;
+}
+
+.pd-features-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: var(--text-light);
+  font-size: 0.95rem;
+}
+
+.pd-features-list .check {
+  width: 26px;
+  height: 26px;
+  background: var(--accent);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
+
+.pd-apartments-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.25rem;
+}
+
+.pd-apartment-card {
+  background: var(--bg-light);
+  padding: 1.25rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  transition: all 0.3s;
+}
+
+.pd-apartment-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+}
+
+.pd-apartment-card h3 {
+  font-size: 1.15rem;
+  color: var(--primary);
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.pd-apartment-details p {
+  color: var(--text-light);
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+}
+
+.pd-apartment-price {
+  font-size: 1.15rem;
+  color: var(--accent);
+  font-weight: 700;
+  margin: 0.75rem 0;
+}
+
+.pd-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.pd-sidebar-card {
+  background: var(--bg-light);
+  padding: 1.25rem;
+  border-radius: 8px;
+}
+
+.pd-sidebar-card h3 {
+  font-size: 1.1rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.pd-info-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.pd-info-item:last-child {
+  border-bottom: none;
+}
+
+.pd-info-item .label {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.pd-info-item .value {
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.pd-info-item .value.available {
+  color: #27ae60;
+  font-weight: 700;
+}
+
+.pd-details-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.pd-details-list li {
+  color: var(--text-light);
+  font-size: 0.9rem;
+  position: relative;
+  padding-left: 1.25rem;
+}
+
+.pd-details-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+.btn-full {
+  width: 100%;
+  text-align: center;
+}
+
+.btn-outline {
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  background: transparent;
+  padding: 0.65rem 1.25rem;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s;
+}
+
+.btn-outline:hover {
+  background: var(--accent);
+  color: var(--white);
+}
+
+/* ============================================
+   RESPONSIVE STYLES
+   ============================================ */
+
+/* Desktop */
+@media (max-width: 1024px) {
+  .pd-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .pd-gallery {
+    display: none;
+  }
+  
+  .pd-features-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .pd-hero {
+    min-height: 45vh;
+  }
+  
+  .pd-hero-content {
+    padding-top: 12vh;
+  }
+  
+  .pd-hero h1 {
+    font-size: 2rem;
+  }
+  
+  .pd-location {
+    font-size: 1rem;
+  }
+  
+  .pd-price {
+    font-size: 1.5rem;
+  }
+  
+  .pd-info {
+    padding: 2.5rem 1rem;
+  }
+  
+  .pd-description h2,
+  .pd-features h2,
+  .pd-apartments h2 {
+    font-size: 1.4rem;
+  }
+  
+  .pd-desc-full {
+    font-size: 0.95rem;
+  }
+  
+  .pd-features-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .pd-features-list li {
+    font-size: 0.9rem;
+  }
+  
+  .pd-apartments-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile Large */
+@media (max-width: 600px) {
+  .pd-hero {
+    min-height: 40vh;
+  }
+  
+  .pd-hero h1 {
+    font-size: 1.75rem;
+  }
+  
+  .pd-hero-content {
+    padding-top: 10vh;
+  }
+  
+  .pd-status {
+    font-size: 0.7rem;
+    padding: 0.35rem 0.75rem;
+  }
+  
+  .pd-price {
+    font-size: 1.35rem;
+  }
+  
+  .pd-apartments-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .pd-apartment-card {
+    max-width: 300px;
+  }
+}
+
+/* Mobile Small */
+@media (max-width: 480px) {
+  .pd-hero h1 {
+    font-size: 1.5rem;
+  }
+  
+  .pd-location {
+    font-size: 0.9rem;
+  }
+  
+  .pd-price {
+    font-size: 1.2rem;
+  }
+  
+  .pd-info {
+    padding: 2rem 0.875rem;
+  }
+  
+  .pd-description h2,
+  .pd-features h2,
+  .pd-apartments h2 {
+    font-size: 1.25rem;
+  }
+  
+  .pd-sidebar-card {
+    padding: 1rem;
+  }
+  
+  .pd-info-item {
+    padding: 0.5rem 0;
+  }
+  
+  .pd-info-item .label,
+  .pd-info-item .value {
+    font-size: 0.85rem;
+  }
+}

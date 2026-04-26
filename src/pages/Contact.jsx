@@ -1,0 +1,171 @@
+import { useState } from 'react'
+import { useEffect } from 'react'
+import AOS from 'aos'
+import './Contact.css'
+
+function Contact() {
+  useEffect(() => {
+    AOS.refresh()
+  }, [])
+
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    project: '',
+    message: ''
+  })
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    })
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    alert('Faleminderit për mesazhin tuaj! Do t\'ju kontaktojmë së shpejti.')
+    setFormData({ name: '', email: '', phone: '', project: '', message: '' })
+  }
+
+  return (
+    <div className="contact">
+      <section className="page-header">
+        <div className="container">
+          <span className="page-tag" data-aos="fade-down">KONTAKTI</span>
+          <h1 data-aos="fade-up" data-aos-delay="100">Na <span>Kontaktoni</span></h1>
+          <p data-aos="fade-up" data-aos-delay="200">Jemi këtu për t\'ju ndihmuar me çdo pyetje mbi investimet tuaja</p>
+        </div>
+      </section>
+
+      <section className="contact-content">
+        <div className="container">
+          <div className="contact-grid">
+            <div className="contact-form-section" data-aos="fade-right">
+              <h2>Dërgo një Mesazh</h2>
+              <form onSubmit={handleSubmit} className="contact-form">
+                <div className="form-group">
+                  <label htmlFor="name">Emri i Plotë</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="email">Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="phone">Numri i Telefonit</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                  />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="project">Projekti i Interesuar</label>
+                  <select
+                    id="project"
+                    name="project"
+                    value={formData.project}
+                    onChange={handleChange}
+                  >
+                    <option value="">Zgjedhni një projekt</option>
+                    <option value="tower">Liburnia Tower</option>
+                    <option value="residence">Liburnia Residence</option>
+                    <option value="business">Liburnia Business</option>
+                    <option value="marina">Liburnia Marina</option>
+                    <option value="green">Liburnia Green</option>
+                    <option value="other">Tjeter</option>
+                  </select>
+                </div>
+                <div className="form-group">
+                  <label htmlFor="message">Mesazhi</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    rows="5"
+                    required
+                  ></textarea>
+                </div>
+                <button type="submit" className="btn btn-primary">Dërgo Mesazhin</button>
+              </form>
+            </div>
+
+            <div className="contact-info-section" data-aos="fade-left" data-aos-delay="200">
+              <h2>Informacionet e Kontaktit</h2>
+              <div className="info-cards">
+                <div className="info-card" data-aos="fade-up" data-aos-delay="100">
+                  <div className="info-icon">📍</div>
+                  <h3>Adresa</h3>
+                  <p>Rr. Ukë Bytyçi</p>
+                  <p>Prizren 20000, Kosovë</p>
+                </div>
+                <div className="info-card" data-aos="fade-up" data-aos-delay="200">
+                  <div className="info-icon">📞</div>
+                  <h3>Telefoni</h3>
+                  <p><a href="tel:+38349761420">+383 49 761 420</a></p>
+                  <p><a href="tel:+38349761411">+383 49 761 411</a></p>
+                </div>
+                <div className="info-card" data-aos="fade-up" data-aos-delay="300">
+                  <div className="info-icon">✉️</div>
+                  <h3>Email</h3>
+                  <p>info@liburnia-impex.com</p>
+                </div>
+                <div className="info-card" data-aos="fade-up" data-aos-delay="400">
+                  <div className="info-icon">⏰</div>
+                  <h3>Orari i Punës</h3>
+                  <p>Hen - Pre: 08:00 - 18:00</p>
+                  <p>Sht: 09:00 - 14:00</p>
+                  <p>Die: Mbyllur</p>
+                </div>
+              </div>
+              
+              <div className="contact-cta" data-aos="fade-up" data-aos-delay="500">
+                <h3>Prirëmi për të investuar?</h3>
+                <p>Na kontaktoni për një takim konsulte falas</p>
+                <a href="tel:+38349761420" className="btn btn-primary">Takim Tani</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="map-section">
+        <div className="container">
+          <h2 data-aos="fade-up">Na Gjeni</h2>
+          <div className="map-container" data-aos="fade-up" data-aos-delay="100">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2948.0663663274616!2d20.74189831547881!3d42.3688248791867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDLCMjIxMS0yMSwgQnXhara4IEtoYW5h!5e0!3m2!1sen!2s!4v1640000000000"
+              width="100%"
+              height="450"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              title="Liburnia Impex Location"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+    </div>
+  )
+}
+
+export default Contact
