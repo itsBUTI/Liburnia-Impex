@@ -13,7 +13,7 @@ function About() {
         <div className="container">
           <span className="page-tag" data-aos="fade-down">RRETH NESH</span>
           <h1 data-aos="fade-up" data-aos-delay="100">Partneri Juaj i <span>Besueshëm</span> Immobiliar</h1>
-          <p data-aos="fade-up" data-aos-delay="200">Më shumë se 15 vjet përvojë në zhvillimin e pasurive të patundshme në Kosovë</p>
+          <p data-aos="fade-up" data-aos-delay="200">Më shumë se 37 vjet përvojë në zhvillimin e pasurive të patundshme në Kosovë</p>
         </div>
       </section>
 
@@ -23,30 +23,34 @@ function About() {
             <div className="about-content" data-aos="fade-right">
               <h2>Historia Jonë</h2>
               <p>
-                <strong>Liburnia Impex</strong> është themeluar në vitin 2008 si një kompani e specializuar në ndërtimin dhe zhvillimin e pasurive të patundshme. 
-                Që atëherë, ne kemi ndërtuar mbi shumë ndërtesa në Prizren dhe zonat përreth.
+                <strong>Liburnia Impex</strong> është themeluar në vitin 1989, duke nisur aktivitetin e saj fillestar në tregtimin e materialeve ndërtimore. Me kalimin e viteve dhe përmes përvojës së fituar në industrinë e ndërtimit, kompania ka evoluar në një zhvillues të plotë të pasurive të patundshme.
               </p>
               <p>
-                Misioni ynë ka qenë gjithmonë i njëjtë: të ofrojmë hapësira jetese dhe biznesi cilësore që sjellin vlerë afatgjatë për investitorët tanë. 
-                Sot, Liburnia Impex njihet si një nga zhvilluesit më të besuar immobiliarë në rajon.
+                Sot, Liburnia Impex përfaqëson një emër të konsoliduar në sektorin e ndërtimit dhe zhvillimit imobiliar, me një portofol të gjerë projektesh të realizuara në Prizren dhe zonat përreth.
+              </p>
+              <p>
+                Misioni ynë ka qenë gjithmonë i njëjtë: të ndërtojmë hapësira moderne banimi dhe biznesi që kombinojnë cilësinë e lartë të ndërtimit me funksionalitetin dhe vlerën afatgjatë për klientët dhe investitorët tanë.
+              </p>
+              <p>
+                Përmes përkushtimit ndaj standardeve të larta dhe zhvillimit të qëndrueshëm, Liburnia Impex vazhdon të kontribuojë në formësimin e hapësirave urbane dhe në krijimin e investimeve të sigurta dhe të qëndrueshme në tregun e pasurive të patundshme.
               </p>
               <div className="about-features">
                 <div className="af-item">
                   <span className="af-icon">✓</span>
-                  <span>Mbi 500 apartamente të shitura</span>
+                  <span>Themeluar në 1989</span>
+                </div>
+                <div className="af-item">
+                  <span className="af-icon">✓</span>
+                  <span>500+ apartamente të shitura</span>
                 </div>
                 <div className="af-item">
                   <span className="af-icon">✓</span>
                   <span>50+ ndërtesa të ndërtuara</span>
                 </div>
-                <div className="af-item">
-                  <span className="af-icon">✓</span>
-                  <span>100% kënaqësi e klientëve</span>
-                </div>
               </div>
             </div>
             <div className="about-image" data-aos="fade-left" data-aos-delay="200">
-              <img src="https://images.unsplash.com/photo-1545328608-91dbbf8b77d2?w=800&q=80" alt="Liburnia Impex" />
+              <img src="/images/l1-1.jpg" alt="Liburnia Impex" />
             </div>
           </div>
         </div>
@@ -104,7 +108,7 @@ function About() {
         <div className="container">
           <div className="stats-grid">
             <div className="stat-card" data-aos="fade-up" data-aos-delay="100">
-              <span className="stat-number">15+</span>
+              <span className="stat-number">35+</span>
               <span className="stat-label">Vite Përvojë</span>
             </div>
             <div className="stat-card" data-aos="fade-up" data-aos-delay="200">

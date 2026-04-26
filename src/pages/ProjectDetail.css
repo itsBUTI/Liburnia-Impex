@@ -1,6 +1,7 @@
 .project-detail {
   min-height: 100vh;
   overflow-x: hidden;
+  background: var(--color-bg-white);
 }
 
 .not-found {
@@ -10,245 +11,341 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 4rem 1.5rem;
+  padding: var(--space-4xl) var(--space-lg);
 }
 
 .not-found h1 {
   font-size: 2rem;
-  color: var(--primary);
-  margin-bottom: 1.5rem;
+  color: var(--color-text-dark);
+  margin-bottom: var(--space-lg);
 }
 
-/* Hero */
+/* ========================================================
+   HERO SLIDER SECTION
+   ======================================================== */
+
 .pd-hero {
   position: relative;
-  min-height: 55vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 1.5rem;
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%) !important;
+  width: 100%;
+  height: 85vh;
+  min-height: 600px;
+  background: var(--color-primary);
+  overflow: hidden;
 }
 
-.pd-hero-overlay {
+.pd-slider-container {
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.pd-slider-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.pd-slider-overlay {
+  position: absolute;
   bottom: 0;
-  background: linear-gradient(to top, rgba(17, 17, 17, 0.95), transparent 60%);
+  left: 0;
+  right: 0;
+  height: 55%;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0.5) 50%,
+    transparent 100%
+  );
+  pointer-events: none;
 }
 
 .pd-hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 1200px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--space-2xl) var(--space-lg);
+  z-index: 10;
+}
+
+.pd-hero-inner {
+  max-width: var(--container-max);
   margin: 0 auto;
   width: 100%;
-  padding-top: 18vh;
 }
 
 .pd-back {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  color: var(--text-muted);
-  margin-bottom: 1.5rem;
+  gap: var(--space-sm);
+  color: rgba(255, 255, 255, 0.8);
   font-size: 0.95rem;
-  transition: color 0.3s;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  margin-bottom: var(--space-md);
 }
 
 .pd-back:hover {
-  color: var(--accent);
+  color: white;
+  transform: translateX(-4px);
 }
 
 .pd-status {
   display: inline-block;
-  background: var(--accent);
-  color: var(--white);
-  padding: 0.4rem 0.875rem;
-  font-size: 0.8rem;
-  font-weight: 600;
-  border-radius: 4px;
-  margin-bottom: 0.75rem;
+  background: var(--color-success);
+  color: white;
+  padding: var(--space-sm) var(--space-md);
+  font-size: 0.75rem;
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-md);
 }
 
 .pd-status.done {
-  background: #27ae60;
+  background: var(--color-success);
 }
 
 .pd-status.coming {
   background: #8e44ad;
 }
 
+.pd-status.under-construction {
+  background: var(--color-accent);
+}
+
 .pd-hero h1 {
-  font-size: 3rem;
-  color: var(--white);
-  margin-bottom: 0.35rem;
+  font-size: 3.5rem;
+  font-weight: var(--font-weight-bold);
+  color: white;
+  margin-bottom: var(--space-sm);
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+  line-height: 1.1;
 }
 
 .pd-location {
-  font-size: 1.1rem;
-  color: var(--text-muted);
-  margin-bottom: 0.35rem;
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.85);
 }
 
-.pd-price {
-  font-size: 1.75rem;
-  color: var(--accent);
-  font-weight: 700;
+.pd-location a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
 }
 
-.pd-gallery {
+.pd-location a:hover {
+  color: var(--color-accent);
+}
+
+/* ========================================================
+   SLIDER NAVIGATION
+   ======================================================== */
+
+.pd-slider-nav {
   position: absolute;
-  right: 1.5rem;
-  bottom: 1.5rem;
-  display: flex;
-  gap: 0.75rem;
-  z-index: 2;
-}
-
-.pd-gallery-item {
-  width: 70px;
-  height: 70px;
+  top: 50%;
+  transform: translateY(-50%);
   background: rgba(255, 255, 255, 0.1);
-  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 1.25rem;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 20;
+  transition: all var(--transition-base);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.75rem;
+  backdrop-filter: blur(10px);
+}
+
+.pd-slider-nav:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.pd-slider-prev {
+  left: var(--space-lg);
+}
+
+.pd-slider-next {
+  right: var(--space-lg);
+}
+
+.pd-slider-dots {
+  position: absolute;
+  bottom: var(--space-lg);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: var(--space-sm);
+  z-index: 20;
+}
+
+.pd-slider-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.3);
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all var(--transition-base);
+  border: none;
+  padding: 0;
 }
 
-.pd-gallery-item:hover {
-  background: var(--accent);
+.pd-slider-dot.active {
+  background: var(--color-accent);
+  width: 36px;
+  border-radius: 6px;
 }
 
-/* Info Section */
+.pd-slider-dot:hover:not(.active) {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+/* ========================================================
+   INFO SECTION
+   ======================================================== */
+
 .pd-info {
-  padding: 3.5rem 1.5rem;
-  background: var(--white);
+  background: white;
+  padding: var(--space-4xl) 0;
 }
 
 .pd-grid {
   display: grid;
-  grid-template-columns: 1fr 350px;
-  gap: 2.5rem;
-  max-width: 1150px;
-  margin: 0 auto;
+  grid-template-columns: 1fr 380px;
+  gap: var(--space-2xl);
+  align-items: start;
 }
 
 .pd-main {
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
+  max-width: 750px;
 }
 
 .pd-description h2,
 .pd-features h2,
 .pd-apartments h2 {
-  font-size: 1.65rem;
-  color: var(--primary);
-  margin-bottom: 1.25rem;
+  font-size: 1.75rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-dark);
+  margin-bottom: var(--space-md);
 }
 
 .pd-desc-full {
-  font-size: 1.05rem;
-  color: var(--text-light);
+  font-size: 1.1rem;
+  color: var(--color-text-medium);
   line-height: 1.8;
+  margin-bottom: var(--space-2xl);
+}
+
+/* Features */
+.pd-features {
+  margin-bottom: var(--space-2xl);
 }
 
 .pd-features-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 0.875rem;
+  gap: var(--space-md);
 }
 
 .pd-features-list li {
   display: flex;
   align-items: center;
-  gap: 0.65rem;
-  color: var(--text-light);
-  font-size: 0.95rem;
+  gap: var(--space-md);
+  font-size: 1rem;
+  color: var(--color-text-dark);
 }
 
 .pd-features-list .check {
-  width: 26px;
-  height: 26px;
-  background: var(--accent);
-  color: var(--white);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.8rem;
-  flex-shrink: 0;
+  color: var(--color-success);
+  font-weight: var(--font-weight-bold);
+  font-size: 1.1rem;
+}
+
+/* Apartments */
+.pd-apartments h2 {
+  margin-bottom: var(--space-lg);
 }
 
 .pd-apartments-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1.25rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
 }
 
 .pd-apartment-card {
-  background: var(--bg-light);
-  padding: 1.25rem;
-  border-radius: 8px;
-  border: 1px solid var(--border);
-  transition: all 0.3s;
+  background: var(--color-bg-light);
+  border-radius: var(--radius-md);
+  padding: var(--space-xl);
+  text-align: center;
+  transition: all var(--transition-base);
 }
 
 .pd-apartment-card:hover {
-  border-color: var(--accent);
-  transform: translateY(-3px);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
 }
 
 .pd-apartment-card h3 {
-  font-size: 1.15rem;
-  color: var(--primary);
-  margin-bottom: 0.75rem;
-  padding-bottom: 0.65rem;
-  border-bottom: 1px solid var(--border);
+  font-size: 1.25rem;
+  color: var(--color-text-dark);
+  margin-bottom: var(--space-md);
 }
 
 .pd-apartment-details p {
-  color: var(--text-light);
-  margin-bottom: 0.4rem;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
+  color: var(--color-text-medium);
+  margin-bottom: var(--space-xs);
 }
 
-.pd-apartment-price {
-  font-size: 1.15rem;
-  color: var(--accent);
-  font-weight: 700;
-  margin: 0.75rem 0;
+.pd-apartment-card .btn {
+  width: 100%;
+  margin-top: var(--space-md);
 }
+
+/* ========================================================
+   SIDEBAR
+   ======================================================== */
 
 .pd-sidebar {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: var(--space-lg);
 }
 
 .pd-sidebar-card {
-  background: var(--bg-light);
-  padding: 1.25rem;
-  border-radius: 8px;
+  background: var(--color-bg-light);
+  border-radius: var(--radius-md);
+  padding: var(--space-xl);
 }
 
 .pd-sidebar-card h3 {
-  font-size: 1.1rem;
-  color: var(--primary);
-  margin-bottom: 1rem;
+  font-size: 0.875rem;
+  color: var(--color-text-dark);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: var(--space-md);
+  font-weight: var(--font-weight-semibold);
 }
 
 .pd-info-item {
   display: flex;
   justify-content: space-between;
-  padding: 0.65rem 0;
-  border-bottom: 1px solid var(--border);
+  padding: var(--space-md) 0;
+  border-bottom: 1px solid var(--color-border-light);
 }
 
 .pd-info-item:last-child {
@@ -256,197 +353,88 @@
 }
 
 .pd-info-item .label {
-  color: var(--text-muted);
+  color: var(--color-text-medium);
   font-size: 0.9rem;
 }
 
 .pd-info-item .value {
-  color: var(--primary);
-  font-weight: 600;
+  color: var(--color-text-dark);
+  font-weight: var(--font-weight-semibold);
   font-size: 0.9rem;
 }
 
 .pd-info-item .value.available {
-  color: #27ae60;
-  font-weight: 700;
-}
-
-.pd-details-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.65rem;
+  color: var(--color-success);
 }
 
 .pd-details-list li {
-  color: var(--text-light);
-  font-size: 0.9rem;
-  position: relative;
-  padding-left: 1.25rem;
+  padding: var(--space-sm) 0;
+  color: var(--color-text-medium);
+  font-size: 0.95rem;
+  border-bottom: 1px solid var(--color-border-light);
 }
 
-.pd-details-list li::before {
-  content: '•';
-  position: absolute;
-  left: 0;
-  color: var(--accent);
+.pd-details-list li:last-child {
+  border-bottom: none;
 }
 
-.btn-full {
-  width: 100%;
-  text-align: center;
-}
+/* ========================================================
+   RESPONSIVE
+   ======================================================== */
 
-.btn-outline {
-  border: 2px solid var(--accent);
-  color: var(--accent);
-  background: transparent;
-  padding: 0.65rem 1.25rem;
-  border-radius: 4px;
-  font-weight: 600;
-  text-decoration: none;
-  display: inline-block;
-  transition: all 0.3s;
-}
-
-.btn-outline:hover {
-  background: var(--accent);
-  color: var(--white);
-}
-
-/* ============================================
-   RESPONSIVE STYLES
-   ============================================ */
-
-/* Desktop */
 @media (max-width: 1024px) {
   .pd-grid {
     grid-template-columns: 1fr;
   }
   
-  .pd-gallery {
-    display: none;
-  }
-  
   .pd-features-list {
     grid-template-columns: 1fr;
   }
-}
-
-/* Tablet */
-@media (max-width: 768px) {
-  .pd-hero {
-    min-height: 45vh;
+  
+  .pd-apartments-grid {
+    grid-template-columns: 1fr;
   }
   
-  .pd-hero-content {
-    padding-top: 12vh;
+  .pd-hero h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .pd-hero {
+    height: 75vh;
+    min-height: 500px;
   }
   
   .pd-hero h1 {
     font-size: 2rem;
   }
   
-  .pd-location {
+  .pd-slider-nav {
+    width: 44px;
+    height: 44px;
     font-size: 1rem;
   }
   
-  .pd-price {
-    font-size: 1.5rem;
+  .pd-slider-prev {
+    left: var(--space-sm);
   }
   
-  .pd-info {
-    padding: 2.5rem 1rem;
-  }
-  
-  .pd-description h2,
-  .pd-features h2,
-  .pd-apartments h2 {
-    font-size: 1.4rem;
-  }
-  
-  .pd-desc-full {
-    font-size: 0.95rem;
-  }
-  
-  .pd-features-list {
-    grid-template-columns: 1fr;
-  }
-  
-  .pd-features-list li {
-    font-size: 0.9rem;
-  }
-  
-  .pd-apartments-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* Mobile Large */
-@media (max-width: 600px) {
-  .pd-hero {
-    min-height: 40vh;
-  }
-  
-  .pd-hero h1 {
-    font-size: 1.75rem;
+  .pd-slider-next {
+    right: var(--space-sm);
   }
   
   .pd-hero-content {
-    padding-top: 10vh;
-  }
-  
-  .pd-status {
-    font-size: 0.7rem;
-    padding: 0.35rem 0.75rem;
-  }
-  
-  .pd-price {
-    font-size: 1.35rem;
-  }
-  
-  .pd-apartments-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .pd-apartment-card {
-    max-width: 300px;
-  }
-}
-
-/* Mobile Small */
-@media (max-width: 480px) {
-  .pd-hero h1 {
-    font-size: 1.5rem;
-  }
-  
-  .pd-location {
-    font-size: 0.9rem;
-  }
-  
-  .pd-price {
-    font-size: 1.2rem;
+    padding: var(--space-lg) var(--space-md);
   }
   
   .pd-info {
-    padding: 2rem 0.875rem;
+    padding: var(--space-2xl) 0;
   }
   
   .pd-description h2,
   .pd-features h2,
   .pd-apartments h2 {
-    font-size: 1.25rem;
-  }
-  
-  .pd-sidebar-card {
-    padding: 1rem;
-  }
-  
-  .pd-info-item {
-    padding: 0.5rem 0;
-  }
-  
-  .pd-info-item .label,
-  .pd-info-item .value {
-    font-size: 0.85rem;
+    font-size: 1.5rem;
   }
 }

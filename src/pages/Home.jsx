@@ -11,6 +11,9 @@ function Home() {
   return (
     <div className="home">
       <section className="hero">
+        <div className="hero-background">
+          <img src="/images/l1-1.jpg" alt="Liburnia Building" />
+        </div>
         <div className="hero-overlay"></div>
         <div className="hero-content">
           <span className="hero-tag" data-aos="fade-down">ZHVILLIMI I PASURIVE TË PATUNDSHME</span>
@@ -21,7 +24,7 @@ function Home() {
             Ndërtojmë ndërtesa moderne, cilësore me çmime konkurruese.
           </p>
           <div className="hero-buttons" data-aos="fade-up" data-aos-delay="400">
-            <Link to="/project/liburnia-tower" className="btn btn-primary">Shiko Projektin E Pare</Link>
+            <Link to="/project/liburnia-1" className="btn btn-primary">Shiko Projektin</Link>
             <Link to="/contact" className="btn btn-secondary">Na Kontaktoni</Link>
           </div>
         </div>
@@ -35,7 +38,7 @@ function Home() {
           <div className="intro-content">
             <h2 data-aos="fade-up">Përvoja që Ndërton Besim</h2>
             <p data-aos="fade-up" data-aos-delay="100">
-              Me mbi 15 vjet përvojë në zhvillimin e pasurive të patundshme, Liburnia Impex është bërë 
+              Me mbi 35 vjet përvojë në zhvillimin e pasurive të patundshme, Liburnia Impex është bërë 
               sinonim i cilësisë dhe besimit në tregun e pasurive të patundshme në Kosovë. Çdo projekt i ndërtuar 
               është dëshmi e angazhimit tonë për ekselencë.
             </p>
@@ -49,7 +52,7 @@ function Home() {
                 <span className="istat-label">Ndërtesa të Ndërtuara</span>
               </div>
               <div className="istat">
-                <span className="istat-num">15+</span>
+                <span className="istat-num">37+</span>
                 <span className="istat-label">Vite Përvojë</span>
               </div>
             </div>
@@ -91,58 +94,50 @@ function Home() {
       <section className="properties-section">
         <div className="container">
           <div className="section-header">
-            <h2 data-aos="fade-up">Projektet e Fundit</h2>
-            <p data-aos="fade-up" data-aos-delay="100">Shiko projektet tona më të fundit në Prizren</p>
+            <h2 data-aos="fade-up">Projektet tona</h2>
+            <p data-aos="fade-up" data-aos-delay="100">Shiko projektet tona në Prizren</p>
           </div>
           <div className="properties-grid">
-            <div className="property-card" onClick={() => handleProjectClick('liburnia-tower')} data-aos="fade-up" data-aos-delay="100">
+            <div className="property-card" onClick={() => handleProjectClick('liburnia-1')} data-aos="fade-up" data-aos-delay="100">
               <div className="property-image">
-                <span className="property-status">NË NDËRTIM</span>
-                <span className="property-icon">🏢</span>
+                <img src="/images/l1-1.jpg" alt="Liburnia 1" />
+                <span className="property-status done">I PËRFUNDUAR</span>
               </div>
               <div className="property-info">
-                <h3>Liburnia Tower</h3>
-                <p className="property-location">📍 Qendër, Prizren</p>
-                <div className="property-details">
-                  <span>2+1, 3+1</span>
-                  <span>12 kate</span>
-                  <span>Parking</span>
-                </div>
-                <p className="property-price">Nga €55,000</p>
-                <span className="property-link">Shiko Detaje →</span>
-              </div>
-            </div>
-            <div className="property-card" onClick={() => handleProjectClick('liburnia-residence')} data-aos="fade-up" data-aos-delay="200">
-              <div className="property-image">
-                <span className="property-status">NË NDËRTIM</span>
-                <span className="property-icon">🏢</span>
-              </div>
-              <div className="property-info">
-                <h3>Liburnia Residence</h3>
-                <p className="property-location">📍 Shatërvan, Prizren</p>
+                <h3>Liburnia 1</h3>
+                <p className="property-location">
+                  <a href="https://maps.app.goo.gl/gwkr4Q8F2nZL6FnD8" target="_blank" rel="noopener noreferrer">
+                    📍 Rrethrotullimi i Ortakollit, Prizren
+                  </a>
+                </p>
                 <div className="property-details">
                   <span>1+1, 2+1</span>
                   <span>6 kate</span>
                   <span>Parking</span>
                 </div>
-                <p className="property-price">Nga €45,000</p>
+                <p className="property-price">Kontaktoni për çmim</p>
                 <span className="property-link">Shiko Detaje →</span>
               </div>
             </div>
-            <div className="property-card" onClick={() => handleProjectClick('liburnia-business')} data-aos="fade-up" data-aos-delay="300">
+
+            <div className="property-card" onClick={() => handleProjectClick('liburnia-2')} data-aos="fade-up" data-aos-delay="200">
               <div className="property-image">
+                <img src="/images/l2-1.jpg" alt="Liburnia 2" />
                 <span className="property-status done">I PËRFUNDUAR</span>
-                <span className="property-icon">🏢</span>
               </div>
               <div className="property-info">
-                <h3>Liburnia Business</h3>
-                <p className="property-location">📍 Ukë Bytyçi, Prizren</p>
+                <h3>Liburnia 2</h3>
+                <p className="property-location">
+                  <a href="https://maps.app.goo.gl/gwkr4Q8F2nZL6FnD8" target="_blank" rel="noopener noreferrer">
+                    📍 Ukë Bytyqi, Prizren
+                  </a>
+                </p>
                 <div className="property-details">
-                  <span>Hapësira Biznesi</span>
-                  <span>3 kate</span>
-                  <span>Qendër</span>
+                  <span>1+1, 2+1, 3+1</span>
+                  <span>5 kate</span>
+                  <span>Parking</span>
                 </div>
-                <p className="property-price">Nga €80,000</p>
+                <p className="property-price">Kontaktoni për çmim</p>
                 <span className="property-link">Shiko Detaje →</span>
               </div>
             </div>
@@ -179,6 +174,16 @@ function Home() {
               <div className="service-icon">⚙️</div>
               <h3>Menaxhim Pronash</h3>
               <p>Mirëmbajtje dhe menaxhim afatgjatë i ndërtesave tona.</p>
+            </div>
+            <div className="service-card" data-aos="fade-up" data-aos-delay="500">
+              <div className="service-icon">🔑</div>
+              <h3>Qira Apartamentesh</h3>
+              <p>Apartamente me qira afatgjatë në lokacione strategjike në Prizren.</p>
+            </div>
+            <div className="service-card" data-aos="fade-up" data-aos-delay="600">
+              <div className="service-icon">🏡</div>
+              <h3>Airbnb & Qira Ditore</h3>
+              <p>Menaxhim i plotë i pronave për qira ditore përmes platformave Airbnb.</p>
             </div>
           </div>
         </div>

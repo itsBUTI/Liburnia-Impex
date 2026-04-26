@@ -6,7 +6,6 @@ function Products() {
       category: 'ÇIMENTO & BETON',
       items: [
         { name: 'Çimento Portland', description: 'Çimento cilësor për të gjitha nevojat ndërtimore' },
-        { name: 'Beton i Gatshëm', description: 'Përzierje profesionale betoni' },
         { name: 'Çimento Muri', description: 'Muri i specializuar' },
       ]
     },
@@ -29,7 +28,6 @@ function Products() {
     {
       category: 'MATERIALE KULMI',
       items: [
-        { name: 'Tulla Kulmi', description: 'Tulla argjile dhe betoni' },
         { name: 'Fleta Metalike', description: 'Truproje të valëzuara' },
         { name: 'Membrana Ujitëzezë', description: 'Izolim ujitëzezës' },
       ]
