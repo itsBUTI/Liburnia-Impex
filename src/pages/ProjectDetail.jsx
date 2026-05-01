@@ -117,8 +117,12 @@ function ProjectDetail() {
           <div className="pd-slider-overlay"></div>
         </div>
 
-        <button className="pd-slider-nav pd-slider-prev" onClick={prevImage}>❮</button>
-        <button className="pd-slider-nav pd-slider-next" onClick={nextImage}>❯</button>
+        <button className="pd-slider-nav pd-slider-prev" onClick={prevImage}>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        </button>
+        <button className="pd-slider-nav pd-slider-next" onClick={nextImage}>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
 
         <div className="pd-slider-dots">
           {project.gallery.map((_, idx) => (
@@ -133,21 +137,27 @@ function ProjectDetail() {
 
         <div className="pd-hero-content">
           <div className="pd-hero-inner">
-            <Link to="/" className="pd-back" data-aos="fade-left">← Kthehu</Link>
+            <Link to="/" className="pd-back" data-aos="fade-left">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+              Kthehu
+            </Link>
             
-            <span className={`pd-status ${project.status === 'I Përfunduar' ? 'done' : project.status === 'Në Ndërtim' ? 'under-construction' : 'coming'}`} data-aos="fade-down">
-              {project.status}
-            </span>
+            <div className="pd-header-top">
+              <span className={`pd-status ${project.status === 'I Përfunduar' ? 'done' : project.status === 'Në Ndërtim' ? 'under-construction' : 'coming'}`} data-aos="fade-down">
+                {project.status}
+              </span>
+            </div>
             
             <h1 data-aos="fade-up" data-aos-delay="100">{project.name}</h1>
             
             <p className="pd-location" data-aos="fade-up" data-aos-delay="200">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
               {project.locationLink ? (
                 <a href={project.locationLink} target="_blank" rel="noopener noreferrer">
-                  📍 {project.location}
+                  {project.location}
                 </a>
               ) : (
-                <>📍 {project.location}</>
+                <>{project.location}</>
               )}
             </p>
           </div>
@@ -168,7 +178,7 @@ function ProjectDetail() {
                 <ul className="pd-features-list">
                   {project.features.map((feature, idx) => (
                     <li key={idx}>
-                      <span className="check">✓</span>
+                      <span className="check"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
                       {feature}
                     </li>
                   ))}
@@ -182,9 +192,9 @@ function ProjectDetail() {
                     <div key={idx} className="pd-apartment-card" data-aos="fade-up" data-aos-delay={idx * 100}>
                       <h3>{type}</h3>
                       <div className="pd-apartment-details">
-                        <p><strong>Siperfaqja:</strong> {data.sqm}</p>
-                        {data.bedrooms && <p><strong>Dhoma gjumi:</strong> {data.bedrooms}</p>}
-                        {data.bathrooms && <p><strong>Banjo:</strong> {data.bathrooms}</p>}
+                        <p><strong>Siperfaqja:</strong> <span>{data.sqm}</span></p>
+                        {data.bedrooms && <p><strong>Dhoma gjumi:</strong> <span>{data.bedrooms}</span></p>}
+                        {data.bathrooms && <p><strong>Banjo:</strong> <span>{data.bathrooms}</span></p>}
                       </div>
                       <Link to="/contact" className="btn btn-outline">Interesohu</Link>
                     </div>
@@ -227,7 +237,7 @@ function ProjectDetail() {
                 </ul>
               </div>
 
-              <Link to="/contact" className="btn btn-primary btn-full" data-aos="fade-up" data-aos-delay="300">Na Kontaktoni për më shumë</Link>
+              <Link to="/contact" className="btn btn-primary btn-full" data-aos="fade-up" data-aos-delay="300">Na Kontaktoni</Link>
             </div>
           </div>
         </div>

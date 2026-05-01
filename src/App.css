@@ -1,114 +1,19 @@
 /* ========================================================
-   APP LAYOUT & GLOBAL STYLES
+   APP LAYOUT & GLOBAL STYLES - Premium Redesign
    ======================================================== */
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
 .app {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background: var(--color-bg-dark);
 }
 
 main {
   flex: 1;
-  padding-top: var(--header-height);
-}
-
-/* Background Pattern */
-body {
-  background: var(--color-bg-white);
-}
-
-/* ========================================================
-   FOOTER STYLES
-   ======================================================== */
-
-.footer {
-  background: var(--color-primary);
-  color: var(--color-text-light);
-  padding: var(--space-4xl) 0 var(--space-lg);
-  margin-top: auto;
-}
-
-.footer-content {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: var(--space-3xl);
-  margin-bottom: var(--space-3xl);
-}
-
-.footer-section h3 {
-  color: white;
-  font-size: 1.5rem;
-  margin-bottom: var(--space-md);
-  font-weight: var(--font-weight-bold);
-}
-
-.footer-section h3 span {
-  color: var(--color-accent);
-}
-
-.footer-section h4 {
-  color: var(--color-accent);
-  font-size: 0.875rem;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  margin-bottom: var(--space-md);
-}
-
-.footer-section p {
-  color: var(--color-text-light);
-  font-size: 0.95rem;
-  margin-bottom: var(--space-sm);
-  line-height: 1.6;
-}
-
-.footer-section a {
-  color: var(--color-text-light);
-  transition: color var(--transition-fast);
-}
-
-.footer-section a:hover {
-  color: var(--color-accent);
-}
-
-.footer-bottom {
-  text-align: center;
-  padding-top: var(--space-xl);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.footer-bottom p {
-  font-size: 0.875rem;
-  color: var(--color-text-muted);
-}
-
-/* Responsive Footer */
-@media (max-width: 1024px) {
-  .footer-content {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-xl);
-  }
-}
-
-@media (max-width: 768px) {
-  .footer {
-    padding: var(--space-3xl) 0 var(--space-md);
-  }
-  
-  .footer-content {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: var(--space-xl);
-  }
-  
-  .footer-section p {
-    justify-content: center;
-    display: flex;
-    align-items: center;
-    gap: var(--space-sm);
-  }
+  /* Note: Some pages may handle padding top themselves, 
+     but generally main content goes below header */
+  /* padding-top: var(--header-height); */
 }
 
 /* ========================================================

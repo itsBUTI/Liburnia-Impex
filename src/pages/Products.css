@@ -1,43 +1,73 @@
+/* ========================================================
+   PRODUCTS PAGE STYLES - Premium Redesign
+   ======================================================== */
+
 .products {
   min-height: 100vh;
+  background: var(--color-bg-dark);
 }
 
 .page-header {
-  padding: calc(var(--header-height) + var(--space-3xl)) 0 var(--space-2xl);
-  background: var(--color-primary);
+  padding: calc(var(--header-height) + var(--space-4xl)) 0 var(--space-3xl);
+  background: linear-gradient(180deg, var(--color-primary) 0%, var(--color-bg-dark) 100%);
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-header::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, var(--color-accent-glow) 0%, transparent 60%);
+  pointer-events: none;
 }
 
 .page-tag {
   display: inline-block;
-  background: var(--color-accent);
-  color: white;
-  padding: var(--space-sm) var(--space-md);
-  font-size: 0.75rem;
-  font-weight: var(--font-weight-semibold);
+  color: var(--color-accent);
+  padding: var(--space-xs) var(--space-md);
+  font-size: 0.8rem;
+  font-weight: var(--font-weight-bold);
   letter-spacing: 2px;
   text-transform: uppercase;
   margin-bottom: var(--space-md);
+  border: 1px solid var(--color-border-accent);
+  border-radius: var(--radius-full);
+  background: rgba(200, 164, 94, 0.05);
 }
 
 .page-header h1 {
-  font-size: 2.75rem;
-  color: white;
-  font-weight: var(--font-weight-bold);
+  font-size: 4rem;
+  color: var(--color-text-white);
+  font-weight: var(--font-weight-extrabold);
+  margin-bottom: var(--space-md);
+  position: relative;
 }
 
 .page-header h1 span {
-  color: var(--color-accent);
+  color: transparent;
+  -webkit-text-stroke: 1px var(--color-accent);
 }
 
 .page-header p {
-  font-size: 1.1rem;
-  color: var(--color-text-muted);
+  font-size: 1.25rem;
+  color: var(--color-text-medium);
+  max-width: 650px;
+  margin: 0 auto;
+  position: relative;
 }
 
+/* Categories Banner */
 .categories-banner {
-  background: var(--color-primary);
-  padding: var(--space-xl) 0;
+  background: var(--color-tertiary);
+  padding: var(--space-2xl) 0;
+  border-top: 1px solid var(--color-border-light);
+  border-bottom: 1px solid var(--color-border-light);
 }
 
 .categories-grid {
@@ -48,35 +78,55 @@
 
 .cat-card {
   text-align: center;
-  padding: var(--space-md);
+  padding: var(--space-lg);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
+  cursor: pointer;
+}
+
+.cat-card:hover {
+  background: var(--color-bg-card-hover);
+  border-color: var(--color-accent);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
 }
 
 .cat-icon {
-  font-size: 2rem;
-  margin-bottom: var(--space-sm);
+  width: 40px;
+  height: 40px;
+  margin: 0 auto var(--space-sm);
+  color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .cat-card h3 {
-  color: white;
-  font-size: 0.9rem;
+  color: var(--color-text-white);
+  font-size: 0.95rem;
+  font-weight: var(--font-weight-medium);
 }
 
+/* Products Content */
 .products-content {
-  padding: var(--space-4xl) 0;
+  padding: var(--space-5xl) 0;
 }
 
 .products-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-xl);
+  gap: var(--space-2xl);
 }
 
 .product-category h2 {
-  font-size: 1.25rem;
-  color: var(--color-text-dark);
-  padding-bottom: var(--space-md);
+  font-size: 1.5rem;
+  color: var(--color-text-white);
+  padding-bottom: var(--space-sm);
   border-bottom: 2px solid var(--color-accent);
   margin-bottom: var(--space-lg);
+  font-family: var(--font-display);
 }
 
 .product-items {
@@ -86,32 +136,41 @@
 }
 
 .product-item {
-  padding: var(--space-md);
-  background: var(--color-bg-light);
-  border-radius: var(--radius-sm);
+  padding: var(--space-lg);
+  background: var(--color-bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border-light);
+  transition: all var(--transition-fast);
+}
+
+.product-item:hover {
+  border-color: var(--color-border-accent);
+  background: var(--color-bg-card-hover);
 }
 
 .product-item h3 {
-  font-size: 1rem;
-  color: var(--color-text-dark);
+  font-size: 1.1rem;
+  color: var(--color-text-white);
   margin-bottom: var(--space-xs);
 }
 
 .product-item p {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: var(--color-text-medium);
 }
 
+/* Services */
 .services {
-  padding: var(--space-4xl) 0;
-  background: var(--color-bg-light);
+  padding: var(--space-5xl) 0;
+  background: var(--color-tertiary);
 }
 
 .services h2 {
   text-align: center;
-  font-size: 2rem;
-  color: var(--color-text-dark);
-  margin-bottom: var(--space-2xl);
+  font-size: 2.5rem;
+  color: var(--color-text-white);
+  margin-bottom: var(--space-3xl);
+  font-family: var(--font-display);
 }
 
 .services-grid {
@@ -121,31 +180,49 @@
 }
 
 .service-card {
-  background: white;
-  padding: var(--space-xl);
-  border-radius: var(--radius-md);
+  background: var(--color-bg-dark);
+  padding: var(--space-2xl) var(--space-xl);
+  border-radius: var(--radius-xl);
   text-align: center;
+  border: 1px solid var(--color-border-light);
+  transition: all var(--transition-base);
+}
+
+.service-card:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
 }
 
 .service-icon {
-  font-size: 2rem;
-  margin-bottom: var(--space-md);
+  width: 60px;
+  height: 60px;
+  margin: 0 auto var(--space-lg);
+  color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .service-card h3 {
-  color: var(--color-text-dark);
+  color: var(--color-text-white);
   margin-bottom: var(--space-sm);
+  font-size: 1.25rem;
 }
 
 .service-card p {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: var(--color-text-medium);
+  line-height: 1.6;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   .categories-grid {
     grid-template-columns: repeat(3, 1fr);
   }
+}
+
+@media (max-width: 1024px) {
   .products-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -155,8 +232,12 @@
 }
 
 @media (max-width: 768px) {
-  .page-header h1 { font-size: 2rem; }
+  .page-header {
+    padding: calc(var(--header-height) + var(--space-3xl)) 0 var(--space-2xl);
+  }
+  .page-header h1 { font-size: 2.5rem; }
   .categories-grid { grid-template-columns: repeat(2, 1fr); }
   .products-grid,
   .services-grid { grid-template-columns: 1fr; }
+  .services h2 { font-size: 2rem; }
 }
