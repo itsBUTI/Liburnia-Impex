@@ -13,11 +13,12 @@ import './index.css'
 import App from './App.jsx'
 
 AOS.init({
-  duration: 800,
-  easing: 'ease-out-cubic',
+  duration: 1000,
+  easing: 'ease-out-quart',
   once: true,
-  offset: 100,
-  delay: 100,
+  offset: 50,
+  delay: 0,
+  anchorPlacement: 'top-bottom',
 })
 
 createRoot(document.getElementById('root')).render(

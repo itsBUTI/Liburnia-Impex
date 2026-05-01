@@ -5,14 +5,16 @@ import Home from './pages/Home'
 import About from './pages/About'
 import ProjectDetail from './pages/ProjectDetail'
 import Contact from './pages/Contact'
+import ScrollToTop from './components/ScrollToTop'
 import './App.css'
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="app">
         <Header />
-        <main>
+        <main className="page-fade-in">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />

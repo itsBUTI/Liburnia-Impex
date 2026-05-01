@@ -9,7 +9,7 @@ function Home() {
   }
 
   return (
-    <div className="home">
+    <div className="home page-fade-in">
       <section className="hero">
         <div className="hero-background">
           <img src="/images/hero1.jpg" alt="Liburnia Building" />
@@ -29,7 +29,7 @@ function Home() {
           </div>
         </div>
         <div className="hero-scroll" data-aos="fade-up" data-aos-delay="500">
-          <span>Zbulo më shumë</span>
+          {/* <span>Zbulo më shumë</span> */}
           <div className="mouse"></div>
         </div>
       </section>
@@ -68,7 +68,7 @@ function Home() {
             <p data-aos="fade-up" data-aos-delay="100">Bëhemi partneri juaj për investimin më të sigurt në pasuri të patundshme</p>
           </div>
           <div className="features-grid">
-            <div className="feature-card" data-aos="fade-up" data-aos-delay="100">
+            <div className="feature-card hover-lift" data-aos="fade-up" data-aos-delay="100">
               <div className="feature-icon">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
               </div>
@@ -107,8 +107,8 @@ function Home() {
             <p data-aos="fade-up" data-aos-delay="100">Zbuloni hapësirat tona moderne të banimit dhe biznesit</p>
           </div>
           <div className="properties-grid">
-            <div className="property-card" onClick={() => handleProjectClick('liburnia-1')} data-aos="fade-up" data-aos-delay="100">
-              <div className="property-image">
+            <div className="property-card hover-lift" onClick={() => handleProjectClick('liburnia-1')} data-aos="fade-up" data-aos-delay="100">
+              <div className="property-image img-pan-hover">
                 <img src="/images/l1-1.jpg" alt="Liburnia 1" />
                 <span className="property-status done">I PËRFUNDUAR</span>
               </div>
@@ -132,7 +132,7 @@ function Home() {
             </div>
 
             <div className="property-card" onClick={() => handleProjectClick('liburnia-2')} data-aos="fade-up" data-aos-delay="200">
-              <div className="property-image">
+              <div className="property-image img-pan-hover">
                 <img src="/images/l2-1.jpg" alt="Liburnia 2" />
                 <span className="property-status done">I PËRFUNDUAR</span>
               </div>
@@ -168,7 +168,7 @@ function Home() {
             <p data-aos="fade-up" data-aos-delay="100">Një spektër i plotë shërbimesh për pasuri të patundshme</p>
           </div>
           <div className="services-grid">
-            <div className="service-card" data-aos="fade-up" data-aos-delay="100">
+            <div className="service-card hover-lift" data-aos="fade-up" data-aos-delay="100">
               <div className="service-icon">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
               </div>

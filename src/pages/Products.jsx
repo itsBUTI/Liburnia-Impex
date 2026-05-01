@@ -51,7 +51,7 @@ function Products() {
   ]
 
   return (
-    <div className="products">
+    <div className="products page-fade-in">
       <section className="page-header">
         <div className="container">
           <span className="page-tag">PRODUKTET</span>

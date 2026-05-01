@@ -102,7 +102,7 @@ function ProjectDetail() {
   }
 
   return (
-    <div className="project-detail">
+    <div className="project-detail page-fade-in">
       <section className="pd-hero">
         <div className="pd-slider-container">
           {project.gallery.map((img, idx) => (

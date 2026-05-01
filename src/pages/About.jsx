@@ -8,7 +8,7 @@ function About() {
   }, [])
 
   return (
-    <div className="about">
+    <div className="about page-fade-in">
       <section className="page-header">
         <div className="container">
           <span className="page-tag" data-aos="fade-down">RRETH NESH</span>
@@ -56,7 +56,7 @@ function About() {
       <section className="mission-section">
         <div className="container">
           <div className="mission-grid">
-            <div className="mission-card" data-aos="fade-up" data-aos-delay="100">
+            <div className="mission-card hover-lift" data-aos="fade-up" data-aos-delay="100">
               <div className="mission-icon">
                 <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
               </div>
@@ -81,7 +81,7 @@ function About() {
             <p data-aos="fade-up" data-aos-delay="100">Ato që na bëjnë të veçantë në treg</p>
           </div>
           <div className="values-grid">
-            <div className="value-card" data-aos="fade-up" data-aos-delay="100">
+            <div className="value-card hover-lift" data-aos="fade-up" data-aos-delay="100">
               <span className="value-num">01</span>
               <h3>Zhvillim i Plotë</h3>
               <p>Ne ndërtojmë dhe shërbejmë vetë - pa ndërmjetës, pa komision agjentësh. Ju bleni drejtpërdrejt nga zhvilluesi.</p>

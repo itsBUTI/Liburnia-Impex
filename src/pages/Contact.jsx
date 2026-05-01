@@ -30,7 +30,7 @@ function Contact() {
   }
 
   return (
-    <div className="contact">
+    <div className="contact page-fade-in">
       <section className="page-header">
         <div className="container">
           <span className="page-tag" data-aos="fade-down">KONTAKTI</span>
@@ -86,12 +86,9 @@ function Contact() {
                     onChange={handleChange}
                   >
                     <option value="">Zgjedhni një projekt</option>
-                    <option value="tower">Liburnia Tower</option>
-                    <option value="residence">Liburnia Residence</option>
-                    <option value="business">Liburnia Business</option>
-                    <option value="marina">Liburnia Marina</option>
-                    <option value="green">Liburnia Green</option>
-                    <option value="other">Tjeter</option>
+                    <option value="tower">Liburnia 1</option>
+                    <option value="residence">Liburnia 2</option>
+        
                   </select>
                 </div>
                 <div className="form-group">
@@ -128,8 +125,8 @@ function Contact() {
                   </div>
                   <div>
                     <h3>Telefoni</h3>
-                    <p><a href="tel:+38349761420">+383 49 761 420</a></p>
-                    <p><a href="tel:+38349761411">+383 49 761 411</a></p>
+                    <p><a href="tel:+38349119369">049 119 369</a></p>
+                    <p><a href="tel:+38349761420">049 761 420</a></p>
                   </div>
                 </div>
                 <div className="info-card" data-aos="fade-up" data-aos-delay="300">
