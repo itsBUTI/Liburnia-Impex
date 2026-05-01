@@ -47,7 +47,7 @@ function About() {
               </div>
             </div>
             <div className="about-image" data-aos="fade-left" data-aos-delay="200">
-              <img src="/images/hero1.jpg" alt="Liburnia Impex" />
+              <img src="../images/hero1.jpg" alt="Liburnia Impex" />
             </div>
           </div>
         </div>
