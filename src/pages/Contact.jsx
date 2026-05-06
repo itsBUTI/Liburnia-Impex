@@ -135,7 +135,7 @@ function Contact() {
                   </div>
                   <div>
                     <h3>Email</h3>
-                    <p><a href="mailto:info@liburnia-impex.com">info@liburnia-impex.com</a></p>
+                    <p><a href="mailto:[EMAIL_ADDRESS]">liburnia.impex@gmail.com</a></p>
                   </div>
                 </div>
                 <div className="info-card" data-aos="fade-up" data-aos-delay="400">

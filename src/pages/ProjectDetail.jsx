@@ -9,9 +9,9 @@ const projectsData = {
     location: 'Rrethrotullimi i Ortakollit, Prizren',
     locationLink: 'https://maps.app.goo.gl/gwkr4Q8F2nZL6FnD8',
     description: 'Kompleks rezidencial dhe komercial në qendër të Prizrenit.',
-    fullDescription: 'Liburnia 1 ndodhet në Rrethrotullimin e Ortakollit në Prizren. Ky kompleks moderne ofron apartamente dhe hapësira comerciale në një lokacion strategjik. Ndërtesa ka 6 kate dhe përfshin parking, bodrum dhe ashensor.',
-    details: ['6 kate', '1+1, 2+1', 'Parking', 'Bodrum', 'Ashensor', 'Hapësira Comerciale'],
-    features: ['Lokacion qendror', 'Afër shkollave', 'Parking privat', 'Bodrum magazinë', 'Ashensor', 'Çmime konkurruese'],
+    fullDescription: 'Liburnia 1 ndodhet në Rrethrotullimin e Ortakollit në Prizren. Ky kompleks moderne ofron apartamente dhe hapësira comerciale në një lokacion strategjik. Përveç banimit, ofrojmë lokale biznesi me sipërfaqe prej 500m² dhe 1000m² në dispozicion për shitje ose me qira, si dhe hapësira të dedikuara për magazina. Ndërtesa ka 6 kate dhe përfshin parking, bodrum dhe ashensor.',
+    details: ['6 kate', '1+1, 2+1', 'Parking', 'Bodrum & Magazina', 'Ashensor', 'Hapësira Comerciale (500m² - 1000m²)'],
+    features: ['Lokacion qendror', 'Lokale për shitje & qira', 'Hapësira për magazina', 'Parking privat', 'Ashensor modern', 'Çmime konkurruese'],
     status: 'I Përfunduar',
     year: '2025',
     completion: 'Dhjetor 2025',
@@ -25,8 +25,10 @@ const projectsData = {
       '/images/l1-6.jpg'
     ],
     floorPlan: {
-      '1+1': { sqm: '55m²', bedrooms: 1, bathrooms: 1 },
-      '2+1': { sqm: '75m²', bedrooms: 2, bathrooms: 1 }
+      '1+1': { sqm: '55m²', bedrooms: 1, bathrooms: 'E mobiluar pjesërisht' },
+      '2+1': { sqm: '75m²', bedrooms: 2, bathrooms: 'Pamje panoramike' },
+      'Lokale': { sqm: '500m² - 1000m²', bedrooms: 0, bathrooms: 'Qasje direkte në rrugë, tavan i lartë (4m)' },
+      'Magazina': { sqm: 'Hapësira të ndryshme', bedrooms: 0, bathrooms: 'Hyrje për kamionë, sistem modern ventilimi' }
     }
   },
   'liburnia-2': {
@@ -192,9 +194,9 @@ function ProjectDetail() {
                     <div key={idx} className="pd-apartment-card" data-aos="fade-up" data-aos-delay={idx * 100}>
                       <h3>{type}</h3>
                       <div className="pd-apartment-details">
-                        <p><strong>Siperfaqja:</strong> <span>{data.sqm}</span></p>
-                        {data.bedrooms && <p><strong>Dhoma gjumi:</strong> <span>{data.bedrooms}</span></p>}
-                        {data.bathrooms && <p><strong>Banjo:</strong> <span>{data.bathrooms}</span></p>}
+                        <p><strong>Sipërfaqja:</strong> <span>{data.sqm}</span></p>
+                        {data.bedrooms > 0 && <p><strong>Hapësira:</strong> <span>{data.bedrooms} dhomë{data.bedrooms > 1 ? 'a' : ''}</span></p>}
+                        {data.bathrooms && <p><strong>Detajet:</strong> <span>{data.bathrooms}</span></p>}
                       </div>
                       <Link to="/contact" className="btn btn-outline">Interesohu</Link>
                     </div>

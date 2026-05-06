@@ -16,7 +16,7 @@ export default function Footer() {
             <p>📍 Rr. Ukë Bytyçi, Prizren</p>
             <p>📞 <a href="tel:+38349119369">049 119 369</a></p>
             <p>📞 <a href="tel:+38349761420">049 761 420</a></p>
-            <p>✉️ info@liburnia-impex.com</p>
+            <p>✉️ liburnia.impex@gmail.com</p>
           </div>
           <div className="footer-section hover-lift">
             <h4>Orari</h4>

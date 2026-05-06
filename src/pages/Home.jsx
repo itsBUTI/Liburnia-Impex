@@ -1,12 +1,7 @@
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import './Home.css'
 
 function Home() {
-  const navigate = useNavigate()
-
-  const handleProjectClick = (slug) => {
-    navigate(`/project/${slug}`)
-  }
 
   return (
     <div className="home page-fade-in">
@@ -24,7 +19,7 @@ function Home() {
             Ndërtojmë ndërtesa moderne, cilësore me standarde evropiane.
           </p>
           <div className="hero-buttons" data-aos="fade-up" data-aos-delay="400">
-            <Link to="/project/liburnia-1" className="btn btn-primary">Shiko Projektin</Link>
+            <Link to="/projects" className="btn btn-primary">Shiko Projektet</Link>
             <Link to="/contact" className="btn btn-secondary">Na Kontaktoni</Link>
           </div>
         </div>
@@ -100,63 +95,42 @@ function Home() {
         </div>
       </section>
 
-      <section className="properties-section">
+      <section className="projects-teaser">
         <div className="container">
-          <div className="section-header">
-            <h2 data-aos="fade-up">Projektet Tona Ekskluzive</h2>
-            <p data-aos="fade-up" data-aos-delay="100">Zbuloni hapësirat tona moderne të banimit dhe biznesit</p>
-          </div>
-          <div className="properties-grid">
-            <div className="property-card hover-lift" onClick={() => handleProjectClick('liburnia-1')} data-aos="fade-up" data-aos-delay="100">
-              <div className="property-image img-pan-hover">
+          <div className="projects-teaser-inner" data-aos="fade-up">
+            <div className="projects-teaser-text">
+              <span className="projects-teaser-tag">PROJEKTET TONA</span>
+              <h2>2 Ndërtesa Premium<br />në Zemër të Prizrenit</h2>
+              <p>Liburnia 1 dhe Liburnia 2 — komplekse moderne rezidenciale dhe afariste. Liburnia 1 ofron lokale ekskluzive prej 500m² dhe 1000m² (për shitje ose qira) si dhe hapësira të dedikuara për magazina.</p>
+              <div className="projects-teaser-badges">
+                <span>44 Njësi Gjithsej</span>
+                <span>16 Disponueshme</span>
+                <span>6 + 5 Kate</span>
+                <span>I Përfunduar</span>
+              </div>
+            </div>
+            <div className="projects-teaser-previews">
+              <Link to="/projects" className="proj-preview-card">
                 <img src="/images/l1-1.jpg" alt="Liburnia 1" />
-                <span className="property-status done">I PËRFUNDUAR</span>
-              </div>
-              <div className="property-info">
-                <h3>Liburnia 1</h3>
-                <p className="property-location">
-                  <a href="https://maps.app.goo.gl/gwkr4Q8F2nZL6FnD8" target="_blank" rel="noopener noreferrer">
-                    📍 Rrethrotullimi i Ortakollit, Prizren
-                  </a>
-                </p>
-                <div className="property-details">
-                  <span>1+1, 2+1</span>
-                  <span>6 kate</span>
-                  <span>Ashensor & Parking</span>
+                <div className="proj-preview-overlay">
+                  <span>Liburnia 1</span>
+                  <small>6 Kate · Ortakoll</small>
                 </div>
-                <div className="property-footer">
-                  <span className="property-price">Kontaktoni</span>
-                  <span className="property-link">Shiko Detaje <span>→</span></span>
-                </div>
-              </div>
-            </div>
-
-            <div className="property-card" onClick={() => handleProjectClick('liburnia-2')} data-aos="fade-up" data-aos-delay="200">
-              <div className="property-image img-pan-hover">
+              </Link>
+              <Link to="/projects" className="proj-preview-card">
                 <img src="/images/l2-1.jpg" alt="Liburnia 2" />
-                <span className="property-status done">I PËRFUNDUAR</span>
-              </div>
-              <div className="property-info">
-                <h3>Liburnia 2</h3>
-                <p className="property-location">
-                  <a href="https://maps.app.goo.gl/gwkr4Q8F2nZL6FnD8" target="_blank" rel="noopener noreferrer">
-                    📍 Ukë Bytyqi, Prizren
-                  </a>
-                </p>
-                <div className="property-details">
-                  <span>1+1, 2+1, 3+1</span>
-                  <span>5 kate</span>
-                  <span>Hapësira Biznesi</span>
+                <div className="proj-preview-overlay">
+                  <span>Liburnia 2</span>
+                  <small>5 Kate · Ukë Bytyqi</small>
                 </div>
-                <div className="property-footer">
-                  <span className="property-price">Kontaktoni</span>
-                  <span className="property-link">Shiko Detaje <span>→</span></span>
-                </div>
-              </div>
+              </Link>
             </div>
-          </div>
-          <div className="section-cta text-center" data-aos="fade-up">
-            <Link to="/contact" className="btn btn-outline">Na Kontaktoni për Më Shumë</Link>
+            <div className="projects-teaser-cta">
+              <Link to="/projects" className="btn btn-primary">Shiko të Gjitha Projektet
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </Link>
+              <Link to="/contact" className="btn btn-outline">Na Kontaktoni</Link>
+            </div>
           </div>
         </div>
       </section>

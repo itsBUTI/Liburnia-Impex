@@ -39,6 +39,7 @@ export default function Header() {
         <nav className={`nav ${menuOpen ? 'active' : ''}`}>
           <Link to="/" onClick={closeMenu}>Kreu</Link>
           <Link to="/about" onClick={closeMenu}>Rreth Nesh</Link>
+          <Link to="/projects" onClick={closeMenu}>Projektet</Link>
           <Link to="/contact" className="btn" onClick={closeMenu}>Na Kontaktoni</Link>
         </nav>
       </div>

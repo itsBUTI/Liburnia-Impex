@@ -13,8 +13,8 @@ import './index.css'
 import App from './App.jsx'
 
 AOS.init({
-  duration: 1000,
-  easing: 'ease-out-quart',
+  duration: 800,
+  easing: 'ease-out',
   once: true,
   offset: 50,
   delay: 0,

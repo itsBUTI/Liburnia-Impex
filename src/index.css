@@ -218,13 +218,17 @@ ul, ol {
   font-weight: var(--font-weight-semibold);
   border-radius: var(--radius-sm);
   text-decoration: none;
-  transition: all var(--transition-base);
+  transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
   cursor: pointer;
   white-space: nowrap;
   letter-spacing: 0.5px;
   text-transform: uppercase;
   position: relative;
   overflow: hidden;
+}
+
+.btn:active {
+  transform: scale(0.97) !important;
 }
 
 .btn::before {
@@ -249,8 +253,8 @@ ul, ol {
 
 .btn-primary:hover {
   color: var(--color-primary);
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 10px 25px var(--color-accent-glow);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(200, 164, 94, 0.4);
 }
 
 .btn-secondary {
@@ -264,7 +268,8 @@ ul, ol {
   background: rgba(255, 255, 255, 0.08);
   color: var(--color-text-white);
   border-color: var(--color-accent);
-  transform: translateY(-3px);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 .btn-outline {
@@ -276,8 +281,8 @@ ul, ol {
 .btn-outline:hover {
   background: var(--color-accent);
   color: var(--color-primary);
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-accent);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(200, 164, 94, 0.3);
 }
 
 .btn-white {
@@ -289,8 +294,8 @@ ul, ol {
 .btn-white:hover {
   background: var(--color-accent);
   color: var(--color-primary);
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-accent-lg);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
 }
 
 .btn-full {
